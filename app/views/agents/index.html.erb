@@ -1,0 +1,28 @@
+
+<h1>Agents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @agents.each do |agent| %>
+      <tr>
+        <td><%= agent.name %></td>
+        <td><%= agent.status %></td>
+        <td>
+          <%= link_to 'Show', agent %>
+          <%= link_to 'Edit', edit_agent_path(agent) %>
+          <%= link_to 'Destroy', agent, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Agent', new_agent_path %>
+
